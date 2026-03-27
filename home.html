@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varu's Bakery | Freshly Baked Happiness</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+        :root {
+            --bakery-brown: #5d3a1a;
+            --bakery-gold: #c6a664;
+            --bakery-cream: #fffaf5;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bakery-cream);
+            color: #2d1e12;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(93, 58, 26, 0.1);
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--bakery-gold);
+            transition: width .3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-[#5d3a1a] flex items-center gap-2">
+                <span class="text-3xl">🍰</span> Varu's Bakery
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link font-semibold text-[#5d3a1a]">Home</a>
+                <a href="#about" class="nav-link font-semibold text-[#5d3a1a]">About</a>
+                <a href="#menu" class="nav-link font-semibold text-[#5d3a1a]">Menu</a>
+                <a href="#custom" class="nav-link font-semibold text-[#5d3a1a]">Custom Cakes</a>
+                <a href="#contact" class="bg-[#8b4513] text-white px-6 py-2 rounded-full hover:bg-[#5d3a1a] transition-colors">Order Now</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-[#8b4513]" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-6 flex flex-col space-y-4 shadow-xl">
+            <a href="#home" class="text-lg font-semibold text-[#5d3a1a]">Home</a>
+            <a href="#about" class="text-lg font-semibold text-[#5d3a1a]">About</a>
+            <a href="#menu" class="text-lg font-semibold text-[#5d3a1a]">Menu</a>
+            <a href="#custom" class="text-lg font-semibold text-[#5d3a1a]">Custom Cakes</a>
+            <a href="#contact" class="text-lg font-semibold text-[#5d3a1a]">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient h-screen flex items-center justify-center text-center text-white pt-20">
+        <div class="px-6 max-w-4xl animate-fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Freshly Baked Happiness Every Day</h1>
+            <p class="text-xl md:text-2xl mb-10 text-gray-100">Handcrafted artisanal breads and treats delivered from our oven to your heart.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-[#c6a664] hover:bg-[#b09355] text-white px-10 py-4 rounded-full text-lg font-bold transition-all shadow-lg">Explore Menu</a>
+                <a href="#contact" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-white text-white px-10 py-4 rounded-full text-lg font-bold transition-all">Visit Our Shop</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 container mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1926&auto=format&fit=crop" alt="Bakery interior" class="rounded-3xl shadow-2xl z-10 relative">
+                <div class="absolute -bottom-6 -right-6 bg-[#c6a664] w-64 h-64 rounded-full -z-0 opacity-20"></div>
+            </div>
+            <div>
+                <span class="text-[#c6a664] font-bold tracking-widest uppercase mb-4 block">Our Story</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#5d3a1a] mb-8 leading-tight">Tradition & Passion in Every Bite</h2>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    Varu's Bakery is more than just a shop; it's a labor of love. As a family-owned destination, we've spent years perfecting the art of sourdough, the flakiness of croissants, and the richness of our custom cakes.
+                </p>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    We source the finest local ingredients and never cut corners. From the crackle of fresh bread at dawn to the sweet scent of cupcakes in the afternoon, quality is our promise.
+                </p>
+                <div class="grid grid-cols-2 gap-8 pt-6 border-t border-gray-200">
+                    <div>
+                        <h4 class="text-3xl font-bold text-[#8b4513]">100%</h4>
+                        <p class="text-gray-500">Natural Ingredients</p>
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-bold text-[#8b4513]">Daily</h4>
+                        <p class="text-gray-500">Freshly Baked</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-[#f8f1e9]">
+        <div class="container mx-auto px-6 text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#5d3a1a] mb-4">Our Signature Menu</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Browse through our most-loved selections, baked fresh every morning.</p>
+        </div>
+        
+        <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Item 1 -->
+            <div class="bg-white p-6 rounded-3xl card-hover flex flex-col items-center text-center">
+                <div class="text-5xl mb-6 bg-orange-50 w-24 h-24 flex items-center justify-center rounded-full">🍞</div>
+                <h3 class="text-2xl font-bold text-[#5d3a1a] mb-2">Artisan Breads</h3>
+                <p class="text-gray-500 mb-4">Sourdough, Whole Wheat, and Classic Baguettes.</p>
+                <span class="text-[#8b4513] font-bold text-xl">Starting at $4.50</span>
+            </div>
+            <!-- Item 2 -->
+            <div class="bg-white p-6 rounded-3xl card-hover flex flex-col items-center text-center">
+                <div class="text-5xl mb-6 bg-yellow-50 w-24 h-24 flex items-center justify-center rounded-full">🥐</div>
+                <h3 class="text-2xl font-bold text-[#5d3a1a] mb-2">Flaky Croissants</h3>
+                <p class="text-gray-500 mb-4">Buttery layers made with premium French butter.</p>
+                <span class="text-[#8b4513] font-bold text-xl">Starting at $3.75</span>
+            </div>
+            <!-- Item 3 -->
+            <div class="bg-white p-6 rounded-3xl card-hover flex flex-col items-center text-center">
+                <div class="text-5xl mb-6 bg-pink-50 w-24 h-24 flex items-center justify-center rounded-full">🎂</div>
+                <h3 class="text-2xl font-bold text-[#5d3a1a] mb-2">Gourmet Cakes</h3>
+                <p class="text-gray-500 mb-4">Chocolate Ganache, Red Velvet, and Seasonal Fruits.</p>
+                <span class="text-[#8b4513] font-bold text-xl">Starting at $25.00</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Cakes Section -->
+    <section id="custom" class="py-24 px-6 bg-[#5d3a1a] text-white">
+        <div class="container mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Your Dream Cake, <br><span class="text-[#c6a664]">Our Expertise</span></h2>
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                    Planning a wedding, birthday, or a special milestone? Our custom cake design service allows you to choose flavors, fillings, and stunning decorations that reflect your style.
+                </p>
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-[#c6a664]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Free Design Consultation
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-[#c6a664]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Tasting Boxes Available
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="h-6 w-6 text-[#c6a664]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Safe Delivery to Your Venue
+                    </li>
+                </ul>
+                <button class="bg-[#c6a664] text-white px-10 py-4 rounded-full font-bold hover:bg-[#b09355] transition-all">Book a Consultation</button>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&w=1974&auto=format&fit=crop" class="rounded-2xl h-64 w-full object-cover" alt="Cake 1">
+                <img src="https://images.unsplash.com/photo-1578985543813-21b3b2844191?q=80&w=1960&auto=format&fit=crop" class="rounded-2xl h-64 w-full object-cover mt-8" alt="Cake 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact" class="py-24 container mx-auto px-6">
+        <div class="bg-white rounded-[3rem] shadow-xl overflow-hidden grid md:grid-cols-2 border border-gray-100">
+            <div class="p-12 md:p-16">
+                <h2 class="text-4xl font-bold text-[#5d3a1a] mb-8">Get in Touch</h2>
+                <div class="space-y-8">
+                    <div class="flex items-start gap-6">
+                        <div class="bg-orange-100 p-4 rounded-2xl text-2xl text-[#8b4513]">📞</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[#5d3a1a]">Phone</h4>
+                            <p class="text-gray-600">070 791 4879</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <div class="bg-orange-100 p-4 rounded-2xl text-2xl text-[#8b4513]">📍</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[#5d3a1a]">Visit Us</h4>
+                            <p class="text-gray-600">123 Baker St, Flour City, FC 45678</p>
+                            <p class="text-sm text-[#c6a664] font-semibold mt-1">Open: 7:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <div class="bg-orange-100 p-4 rounded-2xl text-2xl text-[#8b4513]">✉️</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[#5d3a1a]">Email</h4>
+                            <p class="text-gray-600">hello@varusbakery.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 flex gap-4">
+                    <a href="#" class="bg-gray-100 p-3 rounded-full hover:bg-orange-100 transition-colors">
+                        <svg class="h-6 w-6 text-[#8b4513]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="bg-gray-100 p-3 rounded-full hover:bg-orange-100 transition-colors">
+                        <svg class="h-6 w-6 text-[#8b4513]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="bg-[#f0e6da] relative h-full min-h-[400px]">
+                <!-- Placeholder for an interactive map or a brand photo -->
+                <div class="absolute inset-0 flex items-center justify-center p-8 text-center">
+                    <div>
+                        <div class="text-6xl mb-4">🏛️</div>
+                        <h3 class="text-2xl font-bold text-[#5d3a1a]">Visit Our Store</h3>
+                        <p class="text-gray-600 mt-2">Come smell the fresh yeast and warm vanilla!</p>
+                        <button class="mt-8 bg-white text-[#5d3a1a] px-8 py-3 rounded-full font-bold shadow-md hover:shadow-lg transition-all">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2d1e12] text-gray-400 py-16 px-6">
+        <div class="container mx-auto grid md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <div class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                    🍰 Varu's Bakery
+                </div>
+                <p class="max-w-md mb-8">
+                    Since 2026, we've been dedicated to providing the community with high-quality, handcrafted baked goods using traditional methods and modern flavors.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4">
+                    <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="#menu" class="hover:text-white transition-colors">Menu</a></li>
+                    <li><a href="#custom" class="hover:text-white transition-colors">Custom Cakes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Newsletter</h4>
+                <p class="mb-4 text-sm">Join for fresh updates and coupons.</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email" class="bg-white/10 border-none rounded-l-lg px-4 py-2 w-full text-white outline-none focus:ring-1 focus:ring-[#c6a664]">
+                    <button class="bg-[#c6a664] text-white px-4 py-2 rounded-r-lg hover:bg-[#b09355] transition-all">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="container mx-auto mt-16 pt-8 border-t border-white/5 text-center text-sm">
+            &copy; 2026 Varu's Bakery. All rights reserved. Crafting joy, one slice at a time.
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
